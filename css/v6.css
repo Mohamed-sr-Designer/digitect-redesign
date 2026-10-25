@@ -212,3 +212,12 @@ body.overlay-open,body.overlay-open *{cursor:auto!important}
 body.overlay-open a,body.overlay-open button,body.overlay-open .chip{cursor:pointer!important}
 body.overlay-open input,body.overlay-open textarea{cursor:text!important}
 @media (hover:hover) and (pointer:fine){body.has-cursor input,body.has-cursor textarea,body.has-cursor select{cursor:text}}
+
+/* cursor: size via transform on a pseudo-circle (no layout animation) */
+.cursor{width:88px;height:88px;margin:-44px 0 0 -44px;background:none;transition:none}
+.cursor::before{content:"";position:absolute;inset:0;border-radius:50%;background:var(--dot);transform:scale(.16);transition:transform .35s var(--ease),background .3s}
+.cursor.is-big{width:88px;height:88px;margin:-44px 0 0 -44px}
+.cursor.is-big::before{transform:scale(1)}
+.cursor.on-dot{background:none}
+.cursor.on-dot::before{background:var(--ink)}
+.cursor span{position:relative}
