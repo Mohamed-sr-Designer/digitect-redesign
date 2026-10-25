@@ -1,4 +1,4 @@
-/* DIGITECT — ON AIR. (shared by index.html + academy.html) */
+/* DIGITECT · ON AIR. (shared by index.html + academy.html) */
 (() => {
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -85,7 +85,7 @@
       items: [['CX and UX design', 'تصميم تجربة العميل والمستخدم'], ['Website & apps development', 'تطوير المواقع والتطبيقات'], ['Hosting and maintenance', 'الاستضافة والصيانة'], ['CRM setup and management', 'إعداد وإدارة CRM']] }
   ];
 
-  // team portraits live inside the site's 736×413 "Credentials" slides — we crop each strip with CSS
+  // team portraits live inside the site's 736×413 "Credentials" slides; we crop each strip with CSS
   const SLIDE = {
     A: '2026_06_Digitect_Credentials-24.png', B: '2026_06_Digitect_Credentials-25.png',
     C: '2026_10_Digitect_Credentials-26.png', D: '2026_02_Digitect_Credentials-24.png'
@@ -166,11 +166,29 @@
     const lowData = conn && (conn.saveData || /2g/.test(conn.effectiveType || ''));
     if (!lowData && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
       setTimeout(() => {
-        heroVid.src = heroVid.dataset.src;
-        heroVid.addEventListener('load', () => setTimeout(() => heroVid.classList.add('is-on'), 900), { once: true });
+        revealWhenPlaying(heroVid); heroVid.src = heroVid.dataset.src;
       }, 600);
     }
   }
+  // background Vimeo films only replace their poster once they are really playing,
+  // so a blocked or failed player never shows its error page over the design
+  const revealWhenPlaying = frame => {
+    const onMsg = e => {
+      if (e.source !== frame.contentWindow || !/vimeo\.com$/.test(new URL(e.origin).hostname)) return;
+      let d = e.data;
+      try { if (typeof d === 'string') d = JSON.parse(d); } catch (err) { return; }
+      if (d.event === 'ready') frame.contentWindow.postMessage(JSON.stringify({ method: 'addEventListener', value: 'timeupdate' }), e.origin);
+      if (d.event === 'timeupdate' || d.event === 'playProgress') { frame.classList.add('is-on'); window.removeEventListener('message', onMsg); }
+    };
+    window.addEventListener('message', onMsg);
+  };
+
+  // academy reel: muted background loop after the poster, sound version opens in the lightbox
+  const reelVid = $('.reel__vid');
+  if (reelVid && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    setTimeout(() => { revealWhenPlaying(reelVid); reelVid.src = reelVid.dataset.src; }, 800);
+  }
+
   const t0 = Date.now();
   const tcEls = $$('#heroTc, #fdTc');
   if (tcEls.length) setInterval(() => { const v = tc(Date.now() - t0); tcEls.forEach(el => { el.textContent = v; }); }, 40);
@@ -198,7 +216,7 @@
   const setEp = i => { epOn = i; $$('.epi', epWrap).forEach((b, j) => b.classList.toggle('on', j === i)); };
   const renderEpisodes = () => {
     if (!epWrap) return;
-    epWrap.innerHTML = EPISODES.map((e, i) => `<button class="epi${i === epOn ? ' on' : ''}" type="button" data-i="${i}" data-vimeo="${e[6]}" data-title="${e[0]} — ${e[2]}" data-cursor="Play">
+    epWrap.innerHTML = EPISODES.map((e, i) => `<button class="epi${i === epOn ? ' on' : ''}" type="button" data-i="${i}" data-vimeo="${e[6]}" data-title="${e[0]}: ${e[2]}" data-cursor="Play">
       <img src="${W + e[5]}" alt="" loading="lazy">
       <span class="epi__n mono"><span class="rec"></span>EP.${pad(i + 1)}</span>
       <span class="epi__v">${t(e[0], e[1])}</span>
@@ -350,7 +368,7 @@
       if (!f.name.value.trim()) return f.name.focus();
       if (!/.+@.+\..+/.test(f.email.value)) return f.email.focus();
       const body = `Name: ${f.name.value}\nCompany: ${f.company.value}\nEmail: ${f.email.value}\nMobile: ${f.phone.value}\nNeeds: ${needs}\n\n${f.msg.value}`;
-      location.href = `mailto:info@digitect.com?subject=${encodeURIComponent('New brief — ' + (f.company.value || f.name.value))}&body=${encodeURIComponent(body)}`;
+      location.href = `mailto:info@digitect.com?subject=${encodeURIComponent('New brief: ' + (f.company.value || f.name.value))}&body=${encodeURIComponent(body)}`;
     }
     if (f.classList.contains('acad-form') && !f.classList.contains('mail-form')) {
       e.preventDefault();
@@ -358,7 +376,7 @@
       if (req) return req.focus();
       const d = new FormData(f);
       const body = ['name', 'email', 'mobile', 'university', 'department', 'source', 'portfolio', 'note'].map(k => `${k}: ${d.get(k) || ''}`).join('\n') + '\n\n(CV attached to this email)';
-      location.href = `mailto:info@digitect.com?subject=${encodeURIComponent('d.academy application — ' + d.get('name'))}&body=${encodeURIComponent(body)}`;
+      location.href = `mailto:info@digitect.com?subject=${encodeURIComponent('d.academy application: ' + d.get('name'))}&body=${encodeURIComponent(body)}`;
     }
     // any other application form: every named field goes into the email, subject from data-subject
     if (f.classList.contains('mail-form')) {
@@ -367,7 +385,7 @@
       if (req) return req.focus();
       const d = new FormData(f);
       const body = [...d.entries()].map(([k, v]) => `${k}: ${v}`).join('\n') + '\n\n(CV attached to this email)';
-      location.href = `mailto:info@digitect.com?subject=${encodeURIComponent((f.dataset.subject || 'Application') + ' — ' + (d.get('name') || ''))}&body=${encodeURIComponent(body)}`;
+      location.href = `mailto:info@digitect.com?subject=${encodeURIComponent((f.dataset.subject || 'Application') + ': ' + (d.get('name') || ''))}&body=${encodeURIComponent(body)}`;
     }
   });
 
@@ -404,7 +422,8 @@
 
   /* ---------------- lightbox ---------------- */
   const lb = $('#lb'), lbBox = $('#lbBox');
-  const openLb = (id, title) => {
+  const openLb = (id, title, vertical) => {
+    lbBox.classList.toggle('is-vertical', !!vertical);
     lbBox.innerHTML = `<iframe src="https://player.vimeo.com/video/${id}?autoplay=1&dnt=1&title=0&byline=0&portrait=0&color=EA5D0B" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="${title || 'Film'}"></iframe>`;
     $('#lbTitle').textContent = title || t('Now playing', 'يُعرض الآن');
     lb.classList.add('open');
@@ -415,7 +434,7 @@
   if (lb) {
     document.addEventListener('click', e => {
       const b = e.target.closest('[data-vimeo]');
-      if (b) { e.preventDefault(); openLb(b.dataset.vimeo, b.dataset.title); }
+      if (b) { e.preventDefault(); openLb(b.dataset.vimeo, b.dataset.title, b.dataset.vertical); }
     });
     $('#lbX').addEventListener('click', closeLb);
     lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });

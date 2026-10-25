@@ -1,4 +1,4 @@
-/* careers page — reuses the academy layouts; only the hero and crew band differ */
+/* careers page: reuses the academy layouts; only the hero and crew band differ */
 
 .cr-hero{background:var(--ink)}
 .cr-hero__media{position:absolute;inset:0;overflow:hidden}

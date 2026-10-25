@@ -1,4 +1,4 @@
-/* DIGITECT — "ON AIR." direction
+/* DIGITECT · "ON AIR." direction
    The orange dot from the logo is a REC light. The site behaves like a live broadcast. */
 
 :root{
@@ -426,12 +426,12 @@ html[dir="rtl"] .lb__hud{left:auto;right:var(--gut)}
   .grain{display:none}
 }
 
-/* the dot — a real circle, never a square period */
+/* the dot: a real circle, never a square period */
 .pt{display:inline-block;width:.19em;height:.19em;border-radius:50%;background:var(--dot);margin-inline-start:.05em;vertical-align:baseline;transition:transform .6s var(--ease)}
 .ft__big:hover .pt{transform:scale(1.5)}
 .ft__big:hover{color:var(--paper)}
 .ft__big:hover .pt{background:var(--dot)}
-/* showreel is letterboxed inside 16:9 — scale past the bars */
+/* showreel is letterboxed inside 16:9, scale past the bars */
 .hero__media iframe{transform:translate(-50%,-50%) scale(1.36)}
 .hdr__logo img{height:38px}
 .loader__logo{height:30px}

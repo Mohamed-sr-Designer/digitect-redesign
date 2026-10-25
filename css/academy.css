@@ -1,4 +1,4 @@
-/* d.academy page — same ON AIR. system, academy-specific layouts */
+/* d.academy page: same ON AIR. system, academy-specific layouts */
 
 .hdr__nav a.is-on{background:var(--paper);color:var(--ink)}
 
@@ -105,3 +105,40 @@ html[lang="ar"] .ft--mini .ft__big{font-size:clamp(56px,9vw,150px)}
 /* spacing pass (matches v6 --sec rhythm) */
 .aw,.ach,.as,.ap{padding-block:var(--sec)}
 .ah{padding-bottom:clamp(32px,4vw,52px)}
+
+/* ---------- hero with the academy reel (vertical 9:16 film) ---------- */
+.ah--reel{align-items:center;padding-top:110px}
+.ah__grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(28px,4vw,72px);align-items:end}
+.ah--reel .ah__t{font-size:clamp(56px,8.6vw,156px)}
+html[lang="ar"] .ah--reel .ah__t{font-size:clamp(50px,7.4vw,130px)}
+.ah--reel .ah__foot{align-items:flex-end}
+.ah--reel .ac__tags{margin-top:18px}
+.ah--reel .ah__dot{top:auto;bottom:-16vw;right:-8vw}
+html[dir="rtl"] .ah--reel .ah__dot{right:auto;left:-8vw}
+
+.reel{position:relative;height:min(72vh,640px);aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:#000;
+  border:1px solid var(--line);box-shadow:0 40px 90px rgba(0,0,0,.5);transform:rotate(2deg);transition:transform .6s var(--ease)}
+html[dir="rtl"] .reel{transform:rotate(-2deg)}
+.reel:hover{transform:rotate(0) scale(1.02)}
+.reel__poster,.reel__vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0}
+.reel__vid{opacity:0;transition:opacity 1s;pointer-events:none;transform:scale(1.02)}
+.reel__vid.is-on{opacity:1}
+.reel::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,11,.45),transparent 25%,transparent 60%,rgba(10,10,11,.85));pointer-events:none}
+.reel__hud{position:absolute;top:16px;left:16px;right:16px;z-index:1;display:flex;justify-content:space-between;align-items:center}
+.reel__hud span{display:flex;align-items:center;gap:8px}
+.reel__cta{position:absolute;left:16px;right:16px;bottom:16px;z-index:1;display:flex;align-items:center;gap:12px}
+.reel__cta i{width:52px;height:52px;border-radius:50%;background:var(--dot);display:grid;place-items:center;flex:none;transition:transform .4s var(--ease)}
+.reel:hover .reel__cta i{transform:scale(1.08)}
+.reel__cta svg{width:16px;fill:var(--ink);margin-inline-start:3px}
+html[dir="rtl"] .reel__cta svg{transform:scaleX(-1);margin-inline-start:0;margin-inline-end:3px}
+
+/* vertical films open in a tall lightbox */
+.lb__box.is-vertical{width:auto;height:min(86vh,900px);aspect-ratio:9/16}
+
+@media (max-width:900px){
+  .ah__grid{grid-template-columns:1fr}
+  .reel{height:auto;width:min(78vw,340px);justify-self:center;transform:none}
+  .ah--reel .ah__foot{align-items:flex-start}
+}
+.ah--reel .ah__dot{width:clamp(260px,30vw,520px);bottom:-12vw;right:-6vw}
+html[dir="rtl"] .ah--reel .ah__dot{left:-6vw}
