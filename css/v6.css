@@ -51,7 +51,7 @@ html[dir="rtl"] .epi__play svg{transform:scaleX(-1);margin-inline-start:0;margin
 
 /* ---------- FOUNDER (the interview) ---------- */
 .fd{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:end;gap:clamp(20px,4vw,64px);
-  background:var(--dot) url("../assets/misc/22WhatsApp-Image-2025-07-28-at-12.25.jpg") center/cover;color:var(--ink);
+  background:var(--dot);color:var(--ink);
   padding:clamp(80px,9vw,130px) var(--gut) 0;overflow:hidden;min-height:min(100vh,920px)}
 .fd__media{position:relative;align-self:end;z-index:1}
 .fd__img{width:100%;max-width:640px;height:auto;display:block;margin-inline:auto;filter:drop-shadow(0 30px 60px rgba(10,10,11,.25))}
