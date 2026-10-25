@@ -150,11 +150,11 @@
       if (loader.classList.contains('go')) return;
       cancelAnimationFrame(lt);
       loader.classList.add('go');
-      setTimeout(() => { loader.classList.add('done'); document.body.classList.add('is-live'); }, seen ? 350 : 750);
+      setTimeout(() => { loader.classList.add('done'); document.body.classList.add('is-live'); }, seen ? 350 : 650);
       store.set('dgt-seen', '1');
     };
-    window.addEventListener('load', () => setTimeout(goLive, seen ? 150 : 900));
-    setTimeout(goLive, 3500);
+    window.addEventListener('load', () => setTimeout(goLive, seen ? 150 : 600));
+    setTimeout(goLive, 1500); // hard cap: flood by 1.5s, fade done by ~2.9s
   } else {
     document.body.classList.add('is-live');
   }
