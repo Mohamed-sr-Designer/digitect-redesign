@@ -1,0 +1,10 @@
+/* careers page — reuses the academy layouts; only the hero and crew band differ */
+
+.cr-hero{background:var(--ink)}
+.cr-hero__media{position:absolute;inset:0;overflow:hidden}
+.cr-hero__media img{width:100%;height:100%;object-fit:cover;opacity:.32;filter:grayscale(.4)}
+.cr-hero__media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,11,.6) 0%,rgba(10,10,11,.25) 40%,rgba(10,10,11,.95) 100%)}
+.cr-hero .ah__top{gap:10px;flex-wrap:wrap}
+
+.cr-crew{padding:var(--sec) var(--gut);background:var(--ink-2);border-top:1px solid var(--line)}
+.cr-crew .team__head{margin-bottom:30px}

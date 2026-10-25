@@ -292,13 +292,13 @@
 
   /* ---------------- academy page: departments ---------------- */
   const renderAcademy = () => {
-    const grid = $('#acChannels'), dept = $('#acDept');
+    const grid = $('#acChannels');
     if (grid) grid.innerHTML = CHANNELS.map((c, i) => `<article class="acc"><img src="${W + c.img}" alt="" loading="lazy"><div class="acc__body"><span class="mono"><span class="rec"></span>CH.${pad(i + 1)}</span><h3>${t(c.en, c.ar)}</h3><ul>${c.items.slice(0, 4).map(it => `<li>${t(it[0], it[1])}</li>`).join('')}</ul></div></article>`).join('');
-    if (dept) {
+    $$('#acDept, select[data-dept]').forEach(dept => {
       const val = dept.value;
       dept.innerHTML = `<option value="">${t('Choose', 'اختار')}</option>` + CHANNELS.map(c => `<option value="${c.en}">${t(c.en, c.ar)}</option>`).join('') + `<option value="Other">${t('Not sure yet', 'لسه مش متأكد')}</option>`;
       dept.value = val;
-    }
+    });
   };
 
   /* ---------------- clients ---------------- */
@@ -352,13 +352,22 @@
       const body = `Name: ${f.name.value}\nCompany: ${f.company.value}\nEmail: ${f.email.value}\nMobile: ${f.phone.value}\nNeeds: ${needs}\n\n${f.msg.value}`;
       location.href = `mailto:info@digitect.com?subject=${encodeURIComponent('New brief — ' + (f.company.value || f.name.value))}&body=${encodeURIComponent(body)}`;
     }
-    if (f.classList.contains('acad-form')) {
+    if (f.classList.contains('acad-form') && !f.classList.contains('mail-form')) {
       e.preventDefault();
       const req = $$('[required]', f).find(i => !i.value.trim() || (i.type === 'email' && !/.+@.+\..+/.test(i.value)));
       if (req) return req.focus();
       const d = new FormData(f);
       const body = ['name', 'email', 'mobile', 'university', 'department', 'source', 'portfolio', 'note'].map(k => `${k}: ${d.get(k) || ''}`).join('\n') + '\n\n(CV attached to this email)';
       location.href = `mailto:info@digitect.com?subject=${encodeURIComponent('d.academy application — ' + d.get('name'))}&body=${encodeURIComponent(body)}`;
+    }
+    // any other application form: every named field goes into the email, subject from data-subject
+    if (f.classList.contains('mail-form')) {
+      e.preventDefault();
+      const req = $$('[required]', f).find(i => !i.value.trim() || (i.type === 'email' && !/.+@.+\..+/.test(i.value)));
+      if (req) return req.focus();
+      const d = new FormData(f);
+      const body = [...d.entries()].map(([k, v]) => `${k}: ${v}`).join('\n') + '\n\n(CV attached to this email)';
+      location.href = `mailto:info@digitect.com?subject=${encodeURIComponent((f.dataset.subject || 'Application') + ' — ' + (d.get('name') || ''))}&body=${encodeURIComponent(body)}`;
     }
   });
 
