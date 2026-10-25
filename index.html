@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>DIGITECT — Where changing the narrative begins.</title>
+<meta name="description" content="DIGITECT is a 360° creative &amp; digital marketing agency in Jeddah, Riyadh, Cairo and London. We create social-centric branded interactions and experiences using technology-infused human ideas.">
+<meta name="theme-color" content="#0A0A0B">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://player.vimeo.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Alexandria:wght@300..900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=10">
+<link rel="stylesheet" href="css/v6.css?v=10">
+<style>
+  html[lang="ar"] [data-l="en"],html[lang="en"] [data-l="ar"]{display:none!important}
+</style>
+</head>
+<body>
+
+<!-- LOADER: REC timecode, then the dot floods the screen -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__tc"><span class="rec"></span><span>REC</span><span id="loaderTc">00:00:00:00</span></div>
+  <div class="loader__fill"></div>
+  <img class="loader__logo logo" src="assets/logo-light.svg" alt="" width="407" height="128">
+</div>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" id="cursor" aria-hidden="true"><span id="cursorLabel">Play</span></div>
+
+<!-- HEADER -->
+<header class="hdr" id="hdr">
+  <a class="hdr__logo" href="#top" aria-label="DIGITECT home"><img class="logo" src="assets/logo-light.svg" alt="digitect." width="407" height="128"></a>
+  <nav class="hdr__nav" aria-label="Main">
+    <a href="#work" data-ar="الأعمال">Work</a>
+    <a href="#channels" data-ar="خدماتنا">Capabilities</a>
+    <a href="#team" data-ar="الفريق">Team</a>
+    <a href="academy.html" data-ar="الأكاديمية">Academy</a>
+    <a href="#london" data-ar="لندن">London</a>
+    <a href="#careers" data-ar="الوظائف">Careers</a>
+  </nav>
+  <div class="hdr__end">
+    <button class="hdr__lang" id="langBtn" type="button" aria-label="Switch language">عربي</button>
+    <a class="btn btn--dot hdr__cta" href="#contact" data-brief><span class="rec" style="background:var(--ink)"></span><span data-ar="ابدأ مشروعك">Start a brief</span></a>
+    <button class="hdr__burger" id="burger" type="button" aria-label="Menu"><i></i><i></i></button>
+  </div>
+</header>
+
+<div class="menu" id="menu">
+  <nav aria-label="Mobile">
+    <a href="#work" data-ar="الأعمال">Work</a>
+    <a href="#channels" data-ar="خدماتنا">Capabilities</a>
+    <a href="#team" data-ar="الفريق">Team</a>
+    <a href="academy.html" data-ar="الأكاديمية">Academy</a>
+    <a href="#london" data-ar="لندن">London</a>
+    <a href="#careers" data-ar="الوظائف">Careers</a>
+    <a href="#contact" data-ar="ابدأ مشروعك">Start a brief</a>
+  </nav>
+  <div class="menu__foot mono"><a href="mailto:info@digitect.com">info@digitect.com</a><a href="tel:920024045">920 024 045</a></div>
+</div>
+
+<main id="top">
+
+<!-- HERO: showreel on air -->
+<section class="hero" id="hero">
+  <div class="hero__media">
+    <img src="assets/work/showreel2026.png" alt="" fetchpriority="high">
+    <iframe id="heroVid" title="DIGITECT showreel 2026" allow="autoplay; fullscreen" loading="eager" data-src="https://player.vimeo.com/video/1179232841?background=1&autoplay=1&loop=1&muted=1&dnt=1"></iframe>
+  </div>
+  <div class="hero__shade"></div>
+  <div class="hero__scan"></div>
+  <div class="hero__frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+  <div class="hero__hud">
+    <span class="mono"><span class="rec"></span><span data-ar="على الهواء">On air</span> · <span data-ar="شوريل ٢٠٢٦">Showreel 2026</span></span>
+    <span class="mono hide-m" data-ar="جدة · الرياض · القاهرة · لندن">Jeddah · Riyadh · Cairo · London</span>
+    <span class="mono hide-m">CH.00</span>
+  </div>
+
+  <div class="hero__body">
+    <h1 class="hero__title" data-l="en">
+      <span class="line"><span>Changing</span></span>
+      <span class="line"><span><span class="serif">the</span>narrative<i class="pt"></i></span></span>
+    </h1>
+    <h1 class="hero__title" data-l="ar">
+      <span class="line"><span>هنا تبدأ</span></span>
+      <span class="line"><span><span class="serif">حكاية</span> جديدة<i class="pt"></i></span></span>
+    </h1>
+    <div class="hero__side">
+      <p data-ar="نصنع تجارب وتفاعلات للعلامات التجارية، محورها السوشيال، وأفكار إنسانية تدعمها التكنولوجيا.">We create social-centric branded interactions &amp; experiences using technology-infused human ideas.</p>
+      <div class="row">
+        <button class="btn btn--dot" type="button" data-vimeo="1179232841" data-title="Showreel 2026" data-cursor="Play">
+          <svg width="12" height="14" viewBox="0 0 12 14" aria-hidden="true"><path d="M0 0l12 7-12 7z" fill="currentColor"/></svg>
+          <span data-ar="شغّل بالصوت">Play with sound</span>
+        </button>
+        <a class="btn btn--ghost" href="#work"><span data-ar="شوف الشغل">See the work</span><span class="arr">→</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="hero__tc mono" id="heroTc" aria-hidden="true">00:00:00:00</div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track" id="ticker"></div>
+</div>
+
+<!-- MANIFESTO: orange flood, words only -->
+<section class="mani" id="about">
+  <div class="mani__label mono"><span><span data-ar="البيان">Manifesto</span> · 01</span><span data-ar="مش مجرد وكالة">Not just an agency</span></div>
+  <p class="mani__text" data-l="en" data-words>We aren’t just a marketing agency. We’re <span class="serif">storytellers</span> — weaving narratives that captivate, designs that resonate &amp; promotions that leave a mark<i class="pt" style="background:var(--ink)"></i></p>
+  <p class="mani__text" data-l="ar" data-words>إحنا مش مجرد وكالة تسويق. إحنا <span class="serif">حكّائين</span> — ننسج حكايات تشدّ، وتصاميم تلمس، وحملات تسيب أثر<i class="pt" style="background:var(--ink)"></i></p>
+  <div class="mani__foot">
+    <div class="stat"><b>50+</b><span data-ar="فريق خارق">Super team</span></div>
+    <div class="stat"><b>04</b><span data-ar="مدن · جدة، الرياض، القاهرة، لندن">Cities · JED RUH CAI LDN</span></div>
+    <div class="stat"><b>06</b><span data-ar="قنوات خدمة متكاملة">Capability channels</span></div>
+    <div class="stat"><b>360°</b><span data-ar="من الاستراتيجية للتنفيذ">Strategy to execution</span></div>
+  </div>
+</section>
+
+<!-- EPISODES: featured work as expanding film strips -->
+<section class="ep" id="work">
+  <div class="wrap sh">
+    <div>
+      <div class="sh__k mono"><span class="rec"></span><span data-ar="الحلقات">Episodes</span> · 02</div>
+      <h2 class="sh__t" data-l="en">Work that <span class="serif">speaks</span><i class="pt"></i></h2>
+      <h2 class="sh__t" data-l="ar">شغل <span class="serif">بيتكلم</span><i class="pt"></i></h2>
+    </div>
+    <p class="sh__d" data-ar="مزيج بين الإبداع والاستراتيجية — من حملات السيارات الفاخرة لمحتوى السوشيال اليومي. عدّي على أي حلقة وشغّلها.">The seamless fusion of creativity and strategy — from luxury automotive films to everyday social. Hover an episode, hit play.</p>
+  </div>
+  <div class="ep__strip" id="episodes"></div>
+</section>
+
+<!-- ARCHIVE TAPE: everything, filterable -->
+<section class="tape" id="archive">
+  <div class="wrap">
+    <div class="sh" style="margin-bottom:0">
+      <div>
+        <div class="sh__k mono"><span data-ar="الأرشيف">The archive</span> · 03</div>
+        <h2 class="sh__t" data-l="en">Full <span class="serif">tape</span><i class="pt"></i></h2>
+        <h2 class="sh__t" data-l="ar">الشريط <span class="serif">كامل</span><i class="pt"></i></h2>
+      </div>
+      <div class="chips" id="chips" role="tablist"></div>
+    </div>
+  </div>
+  <div class="tape__rail" id="rail"></div>
+  <div class="wrap">
+    <div class="tape__hint mono"><span data-ar="اسحب للتنقل ←→">Drag to scrub ←→</span><span id="tapeCount"></span></div>
+    <div class="tape__bar"><i id="tapeBar"></i></div>
+  </div>
+</section>
+
+<!-- CHANNELS: capabilities as TV channels -->
+<section class="ch" id="channels">
+  <div class="sh">
+    <div>
+      <div class="sh__k mono"><span data-ar="خدماتنا">Capabilities</span> · 04</div>
+      <h2 class="sh__t" data-l="en">Six channels<i class="pt"></i><br><span class="serif">one</span> signal<i class="pt"></i></h2>
+      <h2 class="sh__t" data-l="ar">ست قنوات<i class="pt"></i><br><span class="serif">إشارة</span> واحدة<i class="pt"></i></h2>
+    </div>
+    <p class="sh__d" data-ar="بنجمع بين البحث والابتكار والإبداع عشان نحوّل أفكار علامتك لحقيقة — كل القنوات تحت سقف واحد.">We blend research, innovation and creativity to turn your brand’s ideas into reality — every channel under one roof.</p>
+  </div>
+  <div class="tv">
+    <ul class="tv__list" id="tvList"></ul>
+    <div class="tv__screen" id="tvScreen">
+      <img id="tvImg" src="assets/work/thumb.jpg" alt="">
+      <canvas id="tvNoise" width="160" height="100"></canvas>
+      <div class="hud mono"><span><span class="rec"></span><span id="tvCh">CH.01</span></span><span data-ar="مباشر">Live</span></div>
+      <div class="tv__body">
+        <h3 id="tvTitle"></h3>
+        <ul id="tvItems"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER: the interview -->
+<section class="fd" id="founder">
+  <div class="fd__media">
+    <img class="fd__img" src="assets/misc/CEO-Digitect.webp" alt="Yousef Sharbatly, Founder &amp; CEO" loading="lazy" width="2114" height="2382">
+    <div class="fd__lower">
+      <span class="fd__live mono"><span class="rec"></span><span data-ar="مباشر">Live</span></span>
+      <span class="fd__name"><b data-ar="يوسف شربتلي">Yousef Sharbatly</b><span class="mono" data-ar="المؤسس والرئيس التنفيذي · DIGITECT">Founder &amp; CEO · DIGITECT</span></span>
+      <span class="fd__tc mono" id="fdTc">00:00:00:00</span>
+    </div>
+  </div>
+  <div class="fd__body">
+    <div class="sh__k mono" style="color:var(--ink)"><span class="rec" style="background:var(--ink)"></span><span data-ar="كلمة من قائدنا">A word from our leader</span> · 05</div>
+    <blockquote class="fd__q" data-l="en" data-words>“We envision DIGITECT to be a catalyst for progress and innovation, helping businesses and communities to thrive in an <span class="serif">ever-changing</span> world.”</blockquote>
+    <blockquote class="fd__q" data-l="ar" data-words>«نتطلّع أن تكون DIGITECT محفّزًا للتقدّم والابتكار، تساعد الشركات والمجتمعات على الازدهار في عالم <span class="serif">دائم التغيّر</span>.»</blockquote>
+    <p class="fd__bio" data-ar="مؤسسنا يوسف شربتلي رائد أعمال سعودي من الجيل التاني وصانع تغيير، جاي من إرث من بناة المشاريع الناجحة، وبيجسّد روح الابتكار والفوز.">Our founder Mr. Yousef Sharbatly is a second-generation Saudi entrepreneur and change-maker who comes from a legacy of successful enterprise builders and embodies the spirit of innovation and winning.</p>
+  </div>
+</section>
+
+<!-- LONDON PARTNERSHIP -->
+<section class="ldn" id="london">
+  <div class="ldn__head">
+    <div>
+      <div class="sh__k mono"><span class="rec"></span><span data-ar="شراكة استراتيجية">Strategic partnership</span> · 06</div>
+      <h2 class="ldn__t" data-l="en">Saudi <span class="serif">spirit</span>.<br>London standards<i class="pt"></i></h2>
+      <h2 class="ldn__t" data-l="ar">روح <span class="serif">سعودية</span>.<br>معايير لندن<i class="pt"></i></h2>
+    </div>
+    <div class="ldn__side">
+      <div class="lockup">
+        <img src="assets/logos/storm.png" alt="BBD Perfect Storm" loading="lazy">
+        <i>×</i>
+        <img class="logo" src="assets/logo-dark.svg" alt="digitect." width="407" height="128" loading="lazy">
+      </div>
+      <p data-ar="شراكة بتوسّع حضورنا في لندن وبترفع معاييرنا أعلى — خبرة عالمية للوصول لسوق بريطانيا، وعمليات أدق، وتنفيذ أقوى، ونتايج أوضح. بنشتغل بمعايير دولية وبنسلّم بروح سعودية.">A partnership that expands our presence in London and raises our standards even higher — global expertise to access the UK market, more refined processes, stronger execution and clearer results. International standards, delivered with a Saudi spirit.</p>
+    </div>
+  </div>
+
+  <div class="film" id="ldnFilm">
+    <video preload="none" playsinline poster="assets/misc/LDN.png" src="https://digitect.com/wp-content/uploads/2025/12/bbdps_x_digitect_highlights_with_interviews_v1-720p.mp4"></video>
+    <div class="film__hud mono"><span><span class="rec"></span>BBD × DIGITECT</span><span data-ar="فيلم الشراكة · ٠٠:٥٦">Partnership film · 00:56</span></div>
+    <button class="film__big" type="button" aria-label="Play partnership film" data-cursor="Play"><i><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z"/></svg></i></button>
+    <div class="film__bar">
+      <button class="film__pp" type="button" aria-label="Play / pause"><svg viewBox="0 0 12 14" class="i-play"><path d="M0 0l12 7-12 7z"/></svg><svg viewBox="0 0 12 14" class="i-pause"><path d="M0 0h4v14H0zM8 0h4v14H8z"/></svg></button>
+      <div class="film__track"><i></i></div>
+      <span class="film__time mono">00:00</span>
+      <button class="film__mute mono" type="button" data-ar="صوت">Sound</button>
+    </div>
+  </div>
+
+  <ul class="ldn__pts">
+    <li><b>01</b><span data-ar="استراتيجيات حملات بمعايير دولية">Campaign strategies aligned with international standards</span></li>
+    <li><b>02</b><span data-ar="حلول تسويقية مبنية على البيانات وفهم السوق">Marketing solutions driven by data &amp; deep market insight</span></li>
+    <li><b>03</b><span data-ar="استراتيجيات علامات قابلة للتوسع دوليًا">Scalable, internationally positioned brand strategies</span></li>
+    <li><b>04</b><span data-ar="كفاءة أعلى في العمليات الإبداعية والتنفيذية">More efficient creative &amp; executional processes</span></li>
+  </ul>
+  <a class="btn btn--ghost" href="https://share.google/O79TXD6Ix7THM1NTT" target="_blank" rel="noopener"><span data-ar="زور BBD">Visit BBD</span><span class="arr">→</span></a>
+</section>
+
+<!-- CLIENTS -->
+<section class="cl" id="clients">
+  <div class="wrap cl__head">
+    <h2 data-ar="علامات صنعت رحلتنا — في كل أنحاء المملكة.">Brands that shape our journey — across Saudi Arabia.</h2>
+    <span class="mono" style="color:var(--mute)" data-ar="العملاء · ٠٧">Clients · 07</span>
+  </div>
+  <div class="cl__row"><div class="cl__track" data-logos="1,2,3"></div></div>
+  <div class="cl__row"><div class="cl__track" data-logos="4,5,6"></div></div>
+  <div class="cl__row"><div class="cl__track" data-logos="7,8,9"></div></div>
+  <div class="wrap awards">
+    <span class="mono" style="color:var(--mute);margin-inline-end:8px" data-ar="على منصات">On the stage at</span>
+    <img src="assets/misc/lions.jpg" alt="Cannes Lions" loading="lazy">
+    <img src="assets/misc/thedrum.jpg" alt="The Drum Awards" loading="lazy">
+    <img src="assets/misc/bestinworld.jpg" alt="Indie Awards — Best in World" loading="lazy">
+  </div>
+</section>
+
+<!-- LEADERS + TEAM -->
+<section class="ld" id="leaders">
+  <div class="sh">
+    <div>
+      <div class="sh__k mono"><span data-ar="القيادة">Leadership</span> · 08</div>
+      <h2 class="sh__t" data-l="en">The <span class="serif">people</span><br>behind the dot<i class="pt"></i></h2>
+      <h2 class="sh__t" data-l="ar"><span class="serif">الناس</span><br>ورا النقطة<i class="pt"></i></h2>
+    </div>
+    <p class="sh__d" data-ar="قيادة سعودية برؤية إقليمية — وتيم من أكتر من ٥٠ حكّاء في جدة والرياض والقاهرة ولندن.">Saudi leadership with a regional vision — and a crew of 50+ storytellers across Jeddah, Riyadh, Cairo and London.</p>
+  </div>
+  <div class="ld__grid">
+    <article class="card rv">
+      <div class="card__img"><img src="assets/misc/PIC-02-735x1536-1.jpg" alt="Hassan Sharbatly" loading="lazy"><span class="rec-tag mono"><span class="rec"></span>REC</span></div>
+      <div class="card__meta"><h3 data-ar="حسن شربتلي">Hassan Sharbatly</h3><span class="mono" data-ar="رئيس مجلس الإدارة">Chairman</span></div>
+    </article>
+    <article class="card rv">
+      <div class="card__img"><img src="assets/misc/Youssef.jpg" alt="Youssef Sharbatly" loading="lazy"><span class="rec-tag mono"><span class="rec"></span>REC</span></div>
+      <div class="card__meta"><h3 data-ar="يوسف شربتلي">Youssef Sharbatly</h3><span class="mono" data-ar="المؤسس والرئيس التنفيذي">Founder &amp; CEO</span></div>
+    </article>
+    <article class="card rv">
+      <div class="card__img"><img src="assets/misc/Faisl-1.jpg" alt="Faisal Al Eisawi" loading="lazy"><span class="rec-tag mono"><span class="rec"></span>REC</span></div>
+      <div class="card__meta"><h3 data-ar="فيصل العيساوي">Faisal Al Eisawi</h3><span class="mono" data-ar="المدير الإقليمي">Regional MD</span></div>
+    </article>
+  </div>
+
+  <div class="team" id="team">
+    <div class="team__head">
+      <div>
+        <div class="sh__k mono"><span class="rec"></span><span data-ar="قابل الفريق">Meet the team</span> · 09</div>
+        <h2 class="team__t" data-l="en">The <span class="serif">crew</span><i class="pt"></i></h2>
+        <h2 class="team__t" data-l="ar"><span class="serif">الطاقم</span><i class="pt"></i></h2>
+      </div>
+      <div class="team__nav">
+        <button type="button" class="team__btn" data-dir="-1" aria-label="Previous">←</button>
+        <button type="button" class="team__btn" data-dir="1" aria-label="Next">→</button>
+      </div>
+    </div>
+    <div class="team__rail" id="teamRail"></div>
+  </div>
+</section>
+
+<!-- ACADEMY -->
+<section class="ac" id="academy">
+  <div class="ac__bg" aria-hidden="true"></div>
+  <div class="ac__grid">
+    <div>
+      <div class="sh__k mono"><span class="rec"></span>d.academy · 10</div>
+      <h2 class="ac__t" data-l="en">Our academy<br>doors are <span class="serif">open</span><i class="pt"></i></h2>
+      <h2 class="ac__t" data-l="ar">أبواب<br>أكاديميتنا <span class="serif">مفتوحة</span><i class="pt"></i></h2>
+    </div>
+    <div class="ac__side">
+      <p data-ar="بندوّر على مبدعين جاهزين يسيبوا أثر. ورّينا اللي عندك وكون جزء من حكايتنا.">We’re looking for creatives ready to make an impact. Show us what you’ve got and be part of our story.</p>
+      <ul class="ac__tags mono">
+        <li data-ar="طلاب وخريجين">Students &amp; graduates</li>
+        <li data-ar="٦ أقسام">6 departments</li>
+        <li data-ar="شغل حقيقي مع عملاء حقيقيين">Real work, real clients</li>
+      </ul>
+      <a class="btn btn--dot" href="academy.html"><span data-ar="قدّم في الأكاديمية">Apply to the academy</span><span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CAREERS -->
+<section class="car" id="careers">
+  <div class="car__dot" aria-hidden="true"></div>
+  <div class="sh__k mono" style="color:var(--ink)"><span class="rec" style="background:var(--ink)"></span><span data-ar="انضم لينا">Join us</span> · 11</div>
+  <h2 class="car__t" data-l="en">Where <span class="serif">changing</span><br>the narrative<br>begins<i class="pt" style="background:var(--ink)"></i></h2>
+  <h2 class="car__t" data-l="ar">هنا <span class="serif">بيبدأ</span><br>تغيير الحكاية<i class="pt" style="background:var(--ink)"></i></h2>
+  <div class="car__row">
+    <p data-ar="بنقدّر موهبتك وبنساعدك ترسم طريقك الإبداعي.">We value your talent and help you shape your creative path.</p>
+    <a class="btn btn--ink" href="mailto:info@digitect.com?subject=Careers%20%E2%80%94%20Application"><span data-ar="قدّم دلوقتي">Apply now</span><span class="arr">→</span></a>
+  </div>
+</section>
+
+<!-- CONTACT / FOOTER -->
+<footer class="ft" id="contact">
+  <div class="sh__k mono"><span class="rec"></span><span data-ar="تواصل معنا">Talk to us</span> · 12</div>
+  <a class="ft__big" href="mailto:info@digitect.com" data-l="en">Talk to us<i class="pt"></i></a>
+  <a class="ft__big" href="mailto:info@digitect.com" data-l="ar">كلّمنا<i class="pt"></i></a>
+
+  <div class="ft__grid">
+    <div class="brief-slot"></div>
+    <div class="ft__info">
+      <div>
+        <span class="mono" style="color:var(--mute);display:block;margin-bottom:10px" data-ar="مباشر">Direct</span>
+        <a class="big" href="mailto:info@digitect.com">info@digitect.com</a>
+        <a class="big" href="tel:920024045">920 024 045</a>
+      </div>
+      <div class="cities" id="cities"></div>
+      <div class="socials">
+        <a href="https://www.instagram.com/digitect_official/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/company/digitect/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.facebook.com/digitect.official" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://vimeo.com/digitect" target="_blank" rel="noopener">Vimeo</a>
+      </div>
+      <a class="btn btn--ghost" style="justify-self:start" href="https://digitectme.sharepoint.com/:b:/s/Digitect-SharedDrive/IQBbVEjx_oqGR6EUMDkPKe9xATawiVvgNmBCwtXsP8q1iws?e=3FJHyf" target="_blank" rel="noopener"><span data-ar="ملف الشركة">Credentials</span><span class="arr">↓</span></a>
+    </div>
+  </div>
+
+  <div class="ft__base mono">
+    <span>© 2026 DIGITECT</span>
+    <span data-ar="هنا تبدأ حكاية جديدة.">Where changing the narrative begins.</span>
+    <a href="#top" data-ar="للأعلى ↑">Back to top ↑</a>
+  </div>
+</footer>
+
+</main>
+
+<!-- BRIEF FORM (rendered into the footer + the desktop popup) -->
+<template id="briefTpl">
+  <form class="brief" novalidate>
+    <div class="brief__two">
+      <label><span class="mono" data-ar="الاسم">Name</span><input name="name" autocomplete="name" required></label>
+      <label><span class="mono" data-ar="الشركة">Company</span><input name="company" autocomplete="organization"></label>
+    </div>
+    <div class="brief__two">
+      <label><span class="mono" data-ar="الإيميل">Email</span><input name="email" type="email" autocomplete="email" required></label>
+      <label><span class="mono" data-ar="الموبايل">Mobile</span><input name="phone" type="tel" autocomplete="tel"></label>
+    </div>
+    <div>
+      <span class="mono" data-ar="محتاج إيه؟">What do you need?</span>
+      <div class="chips need-chips"></div>
+    </div>
+    <label><span class="mono" data-ar="احكيلنا عن المشروع">Tell us about it</span><textarea name="msg" rows="3"></textarea></label>
+    <button class="btn btn--dot" type="submit"><span class="rec" style="background:var(--ink)"></span><span data-ar="ابعت البريف">Send the brief</span></button>
+  </form>
+</template>
+
+<!-- BRIEF POPUP (desktop) -->
+<div class="modal" id="briefModal" role="dialog" aria-modal="true" aria-labelledby="briefTitle">
+  <div class="modal__box">
+    <div class="modal__head">
+      <div>
+        <div class="sh__k mono"><span class="rec"></span><span data-ar="بريف جديد">New brief</span></div>
+        <h2 class="modal__t" id="briefTitle" data-l="en">Let’s change <span class="serif">the</span> narrative<i class="pt"></i></h2>
+        <h2 class="modal__t" data-l="ar">يلا نغيّر <span class="serif">الحكاية</span><i class="pt"></i></h2>
+      </div>
+      <button class="modal__x" type="button" data-close aria-label="Close">✕</button>
+    </div>
+    <div class="brief-slot"></div>
+    <p class="modal__alt mono"><span data-ar="أو كلمنا مباشرة:">Or reach us directly:</span> <a href="mailto:info@digitect.com">info@digitect.com</a> · <a href="tel:920024045">920 024 045</a></p>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Video player">
+  <div class="lb__hud mono"><span class="rec"></span><span id="lbTitle">Now playing</span></div>
+  <button class="lb__x" id="lbX" type="button"><span data-ar="إغلاق">Close</span> ✕</button>
+  <div class="lb__box" id="lbBox"></div>
+</div>
+
+<script src="js/main.js?v=10"></script>
+</body>
+</html>
